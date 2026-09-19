@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@400;700;900&family=Cinzel:wght@500;600;700;800;900&family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Siemreap&display=swap');
+@import "tailwindcss";
+
+:root {
+  --navy-950: #040915;
+  --navy-900: #071126;
+  --navy-850: #0A1931;
+  --navy-800: #0E2243;
+  --navy-700: #15325F;
+  --navy-600: #1E4682;
+  
+  --gold-50: #FDFBF7;
+  --gold-100: #FAF4E5;
+  --gold-200: #F3E5AB;
+  --gold-300: #E6CE78;
+  --gold-400: #D4AF37;
+  --gold-500: #C5A059;
+  --gold-600: #A88132;
+  --gold-700: #856322;
+  
+  --background: #040915;
+  --foreground: #F8FAFC;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #C5A059;
+  color: #071126;
+}
+
+/* ==========================================================================
+   Khmer Typography System - Fix Broken Subscripts, Kerning & Leading
+   ========================================================================== */
+
+.font-khmer,
+.khmer-text,
+[lang="kh"],
+[lang="km"] {
+  font-family: 'Kantumruy Pro', 'Battambang', 'Siemreap', sans-serif;
+  letter-spacing: 0 !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+  line-height: 1.75;
+}
+
+/* Ensure no child element of .font-khmer inherits letter-spacing */
+.font-khmer *,
+[lang="kh"] * {
+  letter-spacing: 0 !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+}
+
+/* Headings in Khmer: generous vertical room for superscripts and subscripts */
+h1.font-khmer,
+h2.font-khmer,
+h3.font-khmer,
+h4.font-khmer,
+.font-khmer h1,
+.font-khmer h2,
+.font-khmer h3,
+.font-khmer h4,
+[lang="kh"] h1,
+[lang="kh"] h2,
+[lang="kh"] h3,
+[lang="kh"] h4 {
+  font-family: 'Kantumruy Pro', 'Battambang', 'Siemreap', sans-serif !important;
+  letter-spacing: 0 !important;
+  line-height: 1.55 !important;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+}
+
+/* Paragraphs and descriptions in Khmer */
+p.font-khmer,
+.font-khmer p,
+[lang="kh"] p {
+  line-height: 1.8 !important;
+}
+
+/* Buttons and Labels in Khmer */
+button.font-khmer,
+.font-khmer button,
+label.font-khmer,
+.font-khmer label,
+[lang="kh"] button,
+[lang="kh"] label {
+  letter-spacing: 0 !important;
+  line-height: 1.6 !important;
+  text-transform: none !important;
+}
+
+/* Latin Typography Utilities */
+.font-serif-luxury {
+  font-family: 'Cinzel', Georgia, serif;
+  letter-spacing: 0.04em;
+}
+
+.font-sans-luxury {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* Gold Gradient Utilities */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFF1C5 0%, #D4AF37 40%, #E3C367 60%, #9F7824 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #A88132 100%);
+}
+
+.bg-gradient-gold-subtle {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(197, 160, 89, 0.05) 100%);
+}
+
+.border-gold-glow {
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.12);
+}
+
+.border-gold-glow:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+/* Luxury Glass Card */
+.glass-card {
+  background: linear-gradient(135deg, rgba(14, 34, 67, 0.7) 0%, rgba(7, 17, 38, 0.85) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+.glass-nav {
+  background: rgba(4, 9, 21, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #071126;
+}
+::-webkit-scrollbar-thumb {
+  background: #234375;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Atmospheric Glow Backgrounds */
+.radial-glow-gold {
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.14) 0%, rgba(4, 9, 21, 0) 70%);
+}
+
+.radial-glow-navy {
+  background: radial-gradient(circle at center, rgba(30, 70, 130, 0.22) 0%, rgba(4, 9, 21, 0) 70%);
+}
