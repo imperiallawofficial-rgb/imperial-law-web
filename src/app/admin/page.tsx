@@ -36,7 +36,7 @@ export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [pinInput, setPinInput] = useState<string>("");
   const [pinError, setPinError] = useState<string>("");
-  const [storedPin, setStoredPin] = useState<string>("1234");
+  const [storedPin, setStoredPin] = useState<string>("$Web@2026!?");
   const [newPinInput, setNewPinInput] = useState<string>("");
   const [pinSuccessMsg, setPinSuccessMsg] = useState<string>("");
 
@@ -318,11 +318,10 @@ export default function AdminPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                activeTab === tab.id
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === tab.id
                   ? "bg-[#D4AF37] text-[#071126] shadow-md"
                   : "bg-[#0A1931] text-slate-300 border border-slate-800 hover:border-slate-600 hover:text-white"
-              }`}
+                }`}
             >
               {tab.icon}
               <span>{tab.label}</span>
@@ -744,11 +743,10 @@ export default function AdminPage() {
                   <button
                     key={practice.id}
                     onClick={() => setSelectedPracticeIndex(index)}
-                    className={`w-full text-left p-3.5 rounded-xl text-xs font-semibold flex items-center justify-between transition-all cursor-pointer ${
-                      selectedPracticeIndex === index
+                    className={`w-full text-left p-3.5 rounded-xl text-xs font-semibold flex items-center justify-between transition-all cursor-pointer ${selectedPracticeIndex === index
                         ? "bg-[#0E2243] border border-[#D4AF37] text-[#F3E5AB] shadow-md"
                         : "bg-[#0A1931] border border-slate-800 text-slate-300 hover:border-slate-700"
-                    }`}
+                      }`}
                   >
                     <div>
                       <span className="block font-bold">{practice.title.en}</span>

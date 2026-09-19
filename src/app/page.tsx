@@ -102,18 +102,6 @@ function MainWebsite() {
         content={content}
       />
 
-      {/* Discreet Admin Portal Link at bottom corner */}
-      <div className="fixed bottom-3 right-3 z-30 opacity-40 hover:opacity-100 transition-opacity">
-        <Link
-          href="/admin"
-          className="flex items-center gap-1.5 py-1 px-2 rounded-lg bg-[#071126]/90 border border-slate-700 text-[10px] text-slate-400 hover:text-[#D4AF37] hover:border-[#D4AF37] transition-colors shadow-lg"
-          title="Staff & Admin Portal"
-        >
-          <Lock className="w-3 h-3 text-[#D4AF37]" />
-          <span>Admin</span>
-        </Link>
-      </div>
-
       {/* Appointment & Consultation Booking Modal */}
       <ConsultationModal
         isOpen={isConsultationOpen}
