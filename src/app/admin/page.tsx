@@ -28,8 +28,8 @@ import {
 import { getStoredContent, STORAGE_KEY, SiteContentType } from "@/context/ContentContext";
 import { siteContent as defaultContent, PracticeArea } from "@/data/content";
 
-const PIN_STORAGE_KEY = "imperial_admin_pin";
-const AUTH_SESSION_KEY = "imperial_admin_auth";
+const PIN_STORAGE_KEY = "imperial_admin_pwd_v2";
+const AUTH_SESSION_KEY = "imperial_admin_auth_v2";
 
 export default function AdminPage() {
   // Authentication State
@@ -181,19 +181,16 @@ export default function AdminPage() {
               </label>
               <input
                 type="password"
-                maxLength={8}
+                maxLength={32}
                 value={pinInput}
                 onChange={(e) => {
                   setPinInput(e.target.value);
                   setPinError("");
                 }}
-                placeholder="••••"
+                placeholder="Enter Password"
                 autoFocus
                 className="w-full text-center text-2xl tracking-[0.5em] py-3 px-4 rounded-xl bg-[#0A1931] border border-slate-700 text-white focus:border-[#D4AF37] focus:outline-none transition-colors"
               />
-              <p className="text-[11px] text-slate-500 mt-2">
-                Default Access PIN: <span className="text-[#D4AF37] font-mono font-bold">1234</span>
-              </p>
             </div>
 
             {pinError && (
@@ -319,8 +316,8 @@ export default function AdminPage() {
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === tab.id
-                  ? "bg-[#D4AF37] text-[#071126] shadow-md"
-                  : "bg-[#0A1931] text-slate-300 border border-slate-800 hover:border-slate-600 hover:text-white"
+                ? "bg-[#D4AF37] text-[#071126] shadow-md"
+                : "bg-[#0A1931] text-slate-300 border border-slate-800 hover:border-slate-600 hover:text-white"
                 }`}
             >
               {tab.icon}
@@ -744,8 +741,8 @@ export default function AdminPage() {
                     key={practice.id}
                     onClick={() => setSelectedPracticeIndex(index)}
                     className={`w-full text-left p-3.5 rounded-xl text-xs font-semibold flex items-center justify-between transition-all cursor-pointer ${selectedPracticeIndex === index
-                        ? "bg-[#0E2243] border border-[#D4AF37] text-[#F3E5AB] shadow-md"
-                        : "bg-[#0A1931] border border-slate-800 text-slate-300 hover:border-slate-700"
+                      ? "bg-[#0E2243] border border-[#D4AF37] text-[#F3E5AB] shadow-md"
+                      : "bg-[#0A1931] border border-slate-800 text-slate-300 hover:border-slate-700"
                       }`}
                   >
                     <div>
