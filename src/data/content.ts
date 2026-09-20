@@ -73,7 +73,7 @@ export const siteContent = {
     hotline: "(+855) 15 333 313 / 60 888 828",
     emergencyPhone: "(+855) 15 333 313 / 60 888 828",
     email: "imperiallawgroup@gmail.com",
-    telegram: "",
+    telegram: "https://t.me/visoth012",
     workingHoursEn: "Mon - Fri: 8:00 AM - 5:30 PM | Sat: By Appointment | Emergency Hotline 24/7",
     workingHoursKh: "ចន្ទ - សុក្រ: ៨:០០ ព្រឹក - ៥:៣០ ល្ងាច | សៅរ៍: តាមការណាត់ | ជំនួយបន្ទាន់ ២៤/៧",
   },
