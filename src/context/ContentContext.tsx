@@ -14,7 +14,7 @@ interface ContentContextType {
 
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
-export const STORAGE_KEY = "imperial_custom_content";
+export const STORAGE_KEY = "imperial_law_content_v2";
 
 export function getStoredContent(): SiteContentType {
   if (typeof window === "undefined") return defaultContent;
@@ -96,8 +96,8 @@ export const useContent = (): ContentContextType => {
   if (!ctx) {
     return {
       content: defaultContent,
-      updateContent: () => {},
-      resetToDefault: () => {},
+      updateContent: () => { },
+      resetToDefault: () => { },
       isLoaded: true,
     };
   }
