@@ -1,3 +1,5 @@
+import image from "next/image";
+
 export type Language = 'en' | 'kh';
 
 export interface PracticeArea {
@@ -387,90 +389,82 @@ export const siteContent = {
 
   attorneys: [
     {
-      id: "managing-partner",
-      name: {
-        en: "H.E. Sokha Sovann",
-        kh: "ឯកឧត្តម សុខា សុវណ្ណ",
-      },
-      role: {
-        en: "Managing Partner & Senior Advocate",
-        kh: "ប្រធានក្រុមមេធាវី និងមេធាវីជាន់ខ្ពស់",
-      },
-      barStatus: {
-        en: "Member of the Bar Association of the Kingdom of Cambodia (BAKC)",
-        kh: "សមាជិកពេញសិទ្ធិនៃគណៈមេធាវីនៃព្រះរាជាណាចក្រកម្ពុជា",
-      },
-      experience: {
-        en: "20+ Years in Litigation & Corporate Law",
-        kh: "បទពិសោធន៍ជាង ២០ ឆ្នាំ ក្នុងវិវាទតុលាការ និងច្បាប់ក្រុមហ៊ុន",
-      },
+      id: "1",
+      nameKh: "ឯកឧត្តម យឹម វិស្សុត",
+      nameEn: "H.E. Yim Vissot",
+      roleKh: "ប្រធានក្រុមមេធាវី និងមេធាវីជាន់ខ្ពស់",
+      roleEn: "Managing Partner & Senior Attorney",
+      image: "/images/1.ឯកឧត្តម យឹម វិស្សុត.jpg",
+      telegram: "https://t.me/visoth012",
+      coolapp: "https://me.coolapp.chat/#acc/SxYWr47RS7eF-qCUP0tPWA",
+      experienceKh: "បទពិសោធន៍ជាង ២០ ឆ្នាំ ក្នុងប្រព័ន្ធតុលាការ និងច្បាប់ក្រុមហ៊ុន",
       specialties: {
         en: ["Commercial Litigation", "Cross-Border M&A", "Real Estate Law"],
-        kh: ["វិវាទពាណិជ្ជកម្ម", "ការវិនិយោគទុនអន្តរជាតិ", "ច្បាប់អចលនទ្រព្យ"],
+        kh: ["វិវាទពាណិជ្ជកម្ម", "ការវិនិយោគឆ្លងដែន", "ច្បាប់អចលនទ្រព្យ"],
       },
       bio: {
-        en: "Advising Fortune 500 companies, prominent banking institutions, and leading real estate developers. Renowned for strategic courtroom brilliance and high-value dispute settlements.",
-        kh: "បានផ្តល់ការប្រឹក្សាដល់ក្រុមហ៊ុនកំពូលៗ គ្រឹះស្ថានធនាគារ និងអ្នកអភិវឌ្ឍន៍អចលនទ្រព្យធំៗ។ មានកេរ្តិ៍ឈ្មោះល្បីល្បាញខាងយុទ្ធសាស្ត្រតស៊ូមតិក្នុងតុលាការ និងការដោះស្រាយវិវាទស្មុគស្មាញ។",
-      },
-      image: "/images/attorney-1.png",
+        en: "Advising Fortune 500 companies, prominent banking institutions, and leading real estate developers with strategic legal guidance.",
+        kh: "បានផ្តល់ការប្រឹក្សាដល់ក្រុមហ៊ុនកំពូលៗ គ្រឹះស្ថានធនាគារ និងអ្នកអភិវឌ្ឍន៍អចលនទ្រព្យធំៗ មានកេរ្តិ៍ឈ្មោះល្បីល្បាញខាងយុទ្ធសាស្ត្រតស៊ូមតិក្នុងតុលាការ និងការដោះស្រាយវិវាទស្មុគស្មាញ។"
+      }
     },
     {
-      id: "partner-litigation",
-      name: {
-        en: "Attorney Chan Vicheka",
-        kh: "មេធាវី ចាន់ វិច្ឆិកា",
-      },
-      role: {
-        en: "Partner - Dispute Resolution & Arbitration",
-        kh: "សហការីជាន់ខ្ពស់ - ផ្នែកដោះស្រាយវិវាទ និងមជ្ឈត្តការ",
-      },
-      barStatus: {
-        en: "BAKC Member & Accredited NCAC Commercial Arbitrator",
-        kh: "សមាជិកគណៈមេធាវី និងជាមជ្ឈត្តករទទួលស្គាល់នៃ NCAC",
-      },
-      experience: {
-        en: "16+ Years Judicial & Arbitral Practice",
-        kh: "បទពិសោធន៍ ១៦ ឆ្នាំ ក្នុងប្រព័ន្ធតុលាការ និងមជ្ឈត្តការ",
-      },
+      id: "2",
+      nameKh: "មេធាវី សេន វាសនា",
+      nameEn: "Attorney Sen Veasna",
+      roleKh: "អនុប្រធានក្រុមមេធាវី",
+      roleEn: "Deputy Managing Partner",
+      image: "/images/2.មេធាវី សេន វាសនា.jpg",
+      telegram: "https://t.me/veasnasen",
+      coolapp: "",
+      experienceKh: "បទពិសោធន៍ជាង ១៦ ឆ្នាំ ក្នុងប្រព័ន្ធតុលាការ និងមជ្ឈត្តការ",
       specialties: {
-        en: ["Commercial Arbitration", "Banking Disputes", "Asset Freezing"],
-        kh: ["មជ្ឈត្តការវិវាទពាណិជ្ជកម្ម", "វិវាទធនាគារ", "ដីការក្សាការពារទ្រព្យ"],
+        en: ["Banking & Finance", "Corporate Law", "Commercial Dispute"],
+        kh: ["ច្បាប់ធនាគារ និងហិរញ្ញវត្ថុ", "ច្បាប់ក្រុមហ៊ុន", "វិវាទពាណិជ្ជកម្ម"],
       },
       bio: {
-        en: "Master of Laws (LL.M) graduate from Université Paris II Panthéon-Assas. Expert in international arbitration tribunals and multi-million dollar asset recovery.",
-        kh: "បញ្ចប់អនុបណ្ឌិតច្បាប់ (LL.M) ពីសាកលវិទ្យាល័យប៉ារីស ២ Panthéon-Assas ប្រទេសបារាំង។ ជំនាញដោះស្រាយវិវាទមជ្ឈត្តការអន្តរជាតិ និងការទាមទារទ្រព្យសម្បត្តិទ្រង់ទ្រាយធំ។",
-      },
-      image: "/images/attorney-2.png",
+        en: "Extensive background in financial restructuring, legal compliance, and complex corporate dispute resolution.",
+        kh: "ជំនាញដោះស្រាយវិវាទពាណិជ្ជកម្ម ការរៀបចំរចនាសម្ព័ន្ធហិរញ្ញវត្ថុឡើងវិញ និងការការពារផលប្រយោជន៍ស្របច្បាប់ជូនស្ថាប័នសាជីវកម្មធំៗ។"
+      }
     },
     {
-      id: "counsel-banking",
-      name: {
-        en: "Attorney Seng Ratana",
-        kh: "មេធាវី សេង រតនា",
-      },
-      role: {
-        en: "Senior Counsel - Banking & Intellectual Property",
-        kh: "ទីប្រឹក្សាច្បាប់ជាន់ខ្ពស់ - ផ្នែកធនាគារ និងកម្មសិទ្ធិបញ្ញា",
-      },
-      barStatus: {
-        en: "BAKC Registered Attorney & Certified Trademark Agent",
-        kh: "សមាជិកគណៈមេធាវី និងជាភ្នាក់ងារតំណាងស្របច្បាប់ចុះបញ្ជីម៉ាក",
-      },
-      experience: {
-        en: "12+ Years Regulatory & Financial Advisory",
-        kh: "បទពិសោធន៍ ១២ ឆ្នាំ ក្នុងការប្រឹក្សាច្បាប់ហិរញ្ញវត្ថុ និងកម្មសិទ្ធិបញ្ញា",
-      },
+      id: "3",
+      nameKh: "មេធាវី ខាត់ធី ឌីម៉ង់",
+      nameEn: "Attorney Khatthy Diamond",
+      roleKh: "សមាជិកក្រុមមេធាវី",
+      roleEn: "Associate Attorney",
+      image: "/images/3.មេធាវី ខាត់ធី ឌីម៉ង់.jpg",
+      telegram: "https://t.me/Att_KhatthyDiamond",
+      coolapp: "",
+      experienceKh: "បទពិសោធន៍ក្នុងការប្រឹក្សាច្បាប់ក្រុមហ៊ុន និងកម្មសិទ្ធិបញ្ញា",
       specialties: {
-        en: ["NBC Banking Compliance", "Trademark & Patents", "Labor Law"],
-        kh: ["បទប្បញ្ញត្តិធនាគារជាតិ", "ម៉ាកពាណិជ្ជកម្ម និងប៉ាតង់", "ច្បាប់ការងារ"],
+        en: ["Intellectual Property", "Contract Drafting", "Labor Law"],
+        kh: ["កម្មសិទ្ធិបញ្ញា", "ការតាក់តែងកិច្ចសន្យា", "ច្បាប់ការងារ"],
       },
       bio: {
-        en: "Provides comprehensive counsel to commercial lenders and multinational brand holders on brand protection, NBC regulatory filings, and complex labor management.",
-        kh: "ផ្តល់ការប្រឹក្សាដ៏ទូលំទូលាយដល់ស្ថាប័នផ្តល់ប្រាក់កម្ចី និងម្ចាស់ម៉ាកយីហោអន្តរជាតិ លើការការពារកម្មសិទ្ធិបញ្ញា និងការអនុលោមតាមច្បាប់ហិរញ្ញវត្ថុ។",
-      },
-      image: "/images/attorney-3.png",
+        en: "Specializing in intellectual property registration, labor compliance, and contract negotiation for domestic and international clients.",
+        kh: "ជំនាញការពារកម្មសិទ្ធិបញ្ញា ការចុះបញ្ជីពាណិជ្ជកម្ម ការតាក់តែងនិងត្រួតពិនិត្យកិច្ចសន្យាពាណិជ្ជកម្ម និងការអនុលោមតាមច្បាប់ការងារ។"
+      }
     },
-  ] as Attorney[],
+    {
+      id: "4",
+      nameKh: "មេធាវី ចិន មុំ",
+      nameEn: "Attorney Chen Mom",
+      roleKh: "សមាជិកក្រុមមេធាវី",
+      roleEn: "Associate Attorney",
+      image: "/images/4.មេធាវី ចិន មុំ.jpg",
+      telegram: "https://t.me/Chen_Mom",
+      coolapp: "",
+      experienceKh: "បទពិសោធន៍ក្នុងការដោះស្រាយវិវាទរដ្ឋប្បវេណី និងដីធ្លី",
+      specialties: {
+        en: ["Civil Litigation", "Family Law", "Land & Property Dispute"],
+        kh: ["វិវាទរដ្ឋប្បវេណី", "ច្បាប់គ្រួសារ", "វិវាទដីធ្លី និងអចលនទ្រព្យ"],
+      },
+      bio: {
+        en: "Experienced in handling civil lawsuits, family law settlements, and real estate litigation with deep legal dedication.",
+        kh: "បទពិសោធន៍ស៊ីជម្រៅលើដំណើរការនីតិវិធីតុលាការរដ្ឋប្បវេណី ការដោះស្រាយវិវាទដីធ្លី និងការផ្តល់ការប្រឹក្សាផ្នែកច្បាប់គ្រួសារ។"
+      }
+    }
+  ],
 
   values: [
     {
