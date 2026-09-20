@@ -68,16 +68,16 @@ export const siteContent = {
     nameKh: "ក្រុមមេធាវីអឹមភើរៀល",
     taglineEn: "Defending Justice, Protecting Your Legacy",
     taglineKh: "ការពារយុត្តិធម៌ ថែរក្សាឧត្តមប្រយោជន៍ និងកេរ្តិ៍ឈ្មោះរបស់លោកអ្នក",
-    addressEn: "Canadia Tower, 18th Floor, Monivong Blvd, Phnom Penh, Kingdom of Cambodia",
-    addressKh: "អគារកាណាឌីយ៉ា ជាន់ទី១៨ មហាវិថីព្រះមុនីវង្ស រាជធានីភ្នំពេញ ព្រះរាជាណាចក្រកម្ពុជា",
-    hotline: "+855 (0) 23 999 888",
-    emergencyPhone: "+855 (0) 12 345 678",
-    email: "contact@imperiallawgroup.com",
-    telegram: "https://t.me/imperiallawgroup",
+    addressEn: "Time Square3 Building, Floor 25th F&G, St355, Sangkat Boeung Kak1, Khan Toul,​ Phnom Penh.",
+    addressKh: "អគារ ថាមស្វ្សែរ៣ ជាន់ទី២៥ F&G ផ្លូវ៣៥៥ សង្កាត់បឹងកក់១ ខណ្ឌទួលគោក រាជធានីភ្នំពេញ",
+    hotline: "(+855) 15 333 313 / 60 888 828",
+    emergencyPhone: "(+855) 15 333 313 / 60 888 828",
+    email: "imperiallawgroup@gmail.com",
+    telegram: "",
     workingHoursEn: "Mon - Fri: 8:00 AM - 5:30 PM | Sat: By Appointment | Emergency Hotline 24/7",
     workingHoursKh: "ចន្ទ - សុក្រ: ៨:០០ ព្រឹក - ៥:៣០ ល្ងាច | សៅរ៍: តាមការណាត់ | ជំនួយបន្ទាន់ ២៤/៧",
   },
-  
+
   nav: {
     home: { en: "Home", kh: "ទំព័រដើម" },
     about: { en: "About Firm", kh: "អំពីយើងខ្ញុំ" },
