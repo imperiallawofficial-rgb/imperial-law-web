@@ -19,7 +19,6 @@ export default function Home() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // ដោះស្រាយបញ្ហា Hydration Mismatch ដោយផ្ទុកភាសាពី LocalStorage ក្រោយពេល Client Mounted
   useEffect(() => {
     try {
       const savedLang = localStorage.getItem("imperial_law_lang") as Language;
@@ -27,22 +26,28 @@ export default function Home() {
         setCurrentLang(savedLang);
       }
     } catch (e) {
-      console.error("Failed to read language preference:", e);
+      console.error(e);
     }
     setMounted(true);
   }, []);
 
-  // មុខងារប្តូរភាសា (Switch Language) ដោយរក្សាទុកទៅក្នុង LocalStorage
   const handleToggleLang = (lang: Language) => {
     setCurrentLang(lang);
     try {
       localStorage.setItem("imperial_law_lang", lang);
     } catch (e) {
-      console.error("Failed to save language preference:", e);
+      console.error(e);
     }
   };
 
-  // ការពារកុំឱ្យ Browser Render ជាន់គ្នា មុនពេល Client ស្គាល់ State ពិតប្រាកដ
+  const handleOpenConsultation = () => {
+    setIsConsultationOpen(true);
+  };
+
+  const handleSelectPractice = (practiceId?: any) => {
+    setIsConsultationOpen(true);
+  };
+
   if (!mounted) {
     return (
       <div className="min-h-screen bg-[#040915] flex items-center justify-center">
@@ -52,35 +57,44 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#040915] text-[#F8FAFC] flex flex-col selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
-      {/* របារ Menu ខាងលើ */}
+    <div key={currentLang} className="min-h-screen bg-[#040915] text-[#F8FAFC] flex flex-col selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+      {/* Navbar */}
       <Navbar
         currentLang={currentLang}
         onToggleLang={handleToggleLang}
-        onOpenConsultation={() => setIsConsultationOpen(true)}
+        onOpenConsultation={handleOpenConsultation}
       />
 
-      {/* ខ្លឹមសារគោលនៃទំព័រដើម */}
+      {/* Main Content */}
       <main className="flex-1">
         <Hero
           currentLang={currentLang}
-          onOpenConsultation={() => setIsConsultationOpen(true)}
+          onOpenConsultation={handleOpenConsultation}
         />
-        <AboutUs currentLang={currentLang} />
-        <PracticeAreas currentLang={currentLang} />
+        <AboutUs
+          currentLang={currentLang}
+          onOpenConsultation={handleOpenConsultation}
+        />
+        <PracticeAreas
+          currentLang={currentLang}
+          onSelectPractice={handleSelectPractice}
+        />
         <Attorneys
           currentLang={currentLang}
-          onOpenConsultation={() => setIsConsultationOpen(true)}
+          onOpenConsultation={handleOpenConsultation}
         />
         <TrustAndResults currentLang={currentLang} />
         <FaqSection currentLang={currentLang} />
         <ContactSection currentLang={currentLang} />
       </main>
 
-      {/* បាតក្រោមគេហទំព័រ */}
-      <Footer currentLang={currentLang} />
+      {/* Footer */}
+      <Footer
+        currentLang={currentLang}
+        onOpenConsultation={handleOpenConsultation}
+      />
 
-      {/* ផ្ទាំង Popup កក់ការពិគ្រោះយោបល់ */}
+      {/* Modal */}
       {isConsultationOpen && (
         <ConsultationModal
           currentLang={currentLang}
@@ -89,7 +103,7 @@ export default function Home() {
         />
       )}
 
-      {/* ប៊ូតុងរុញឡើងទៅលើវិញ */}
+      {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
   );

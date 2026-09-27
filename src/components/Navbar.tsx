@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
-import { Phone, Clock, ShieldCheck, Menu, X, Calendar } from "lucide-react";
+import { Phone, ShieldCheck, Menu, X, Calendar } from "lucide-react";
 import { Language } from "@/data/content";
 
 interface NavbarProps {
@@ -12,13 +11,18 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  currentLang,
+  currentLang = "kh",
   onToggleLang,
   onOpenConsultation,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // បញ្ជីតំណភ្ជាប់ Menu ទាំងពីរភាសា
+  const handleLangChange = (lang: Language) => {
+    if (onToggleLang) {
+      onToggleLang(lang);
+    }
+  };
+
   const navLinks = [
     { href: "#about", labelKh: "អំពីយើងខ្ញុំ", labelEn: "About Firm" },
     { href: "#practice-areas", labelKh: "ជំនាញច្បាប់", labelEn: "Practice Areas" },
@@ -29,10 +33,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#040915]/90 border-b border-slate-800">
-      {/* របារព័ត៌មានខាងលើ (Top Utility Bar) */}
+      {/* Top Utility Bar */}
       <div className="bg-[#071126] border-b border-slate-800/60 text-xs py-2 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          {/* ព័ត៌មានទទួលស្គាល់ដោយគណៈមេធាវី */}
           <div className="flex items-center gap-2 text-slate-300">
             <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
             <span className={currentLang === "kh" ? "font-khmer text-[11px]" : "text-[11px]"}>
@@ -42,7 +45,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             </span>
           </div>
 
-          {/* Hotline & ជំនួយបន្ទាន់ */}
           <div className="flex items-center gap-4 text-slate-400 text-[11px]">
             <a
               href="tel:+85515333313"
@@ -61,22 +63,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* របារមេនុយគោល (Main Navigation Bar) */}
+      {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo ក្រុមហ៊ុន */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
-              <img
-                src="/images/logo.png"
-                alt="Imperial Law Group"
-                className="w-full h-full object-contain"
-                onError={(e) => {
-                  // Fallback បើគ្មានរូប logo.png គឺបង្ហាញរូបជំនួស
-                  (e.target as HTMLElement).style.display = "none";
-                }}
-              />
-            </div>
             <div className="flex flex-col">
               <span className="font-khmer font-bold text-sm tracking-wide text-[#D4AF37] leading-tight">
                 ក្រុមមេធាវីអុីមភើរៀល
@@ -90,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
+          {/* Nav links */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
@@ -99,19 +89,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className={`text-sm text-slate-300 hover:text-[#D4AF37] transition-colors py-1 relative font-medium ${currentLang === "kh" ? "font-khmer" : ""
                   }`}
               >
-                {/* បង្ហាញភាសាដាច់ដោយឡែកពីគ្នា មិនឱ្យជាន់គ្នាដាច់ខាត */}
                 {currentLang === "kh" ? link.labelKh : link.labelEn}
               </a>
             ))}
           </nav>
 
-          {/* Action Buttons & Language Switcher */}
+          {/* Action & Switcher */}
           <div className="hidden sm:flex items-center gap-4">
-            {/* Language Switcher Buttons */}
             <div className="flex items-center bg-[#071126] border border-slate-800 rounded-full p-0.5">
               <button
                 type="button"
-                onClick={() => onToggleLang && onToggleLang("kh")}
+                onClick={() => handleLangChange("kh")}
                 className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${currentLang === "kh"
                     ? "bg-[#D4AF37] text-slate-950 shadow-sm"
                     : "text-slate-400 hover:text-white"
@@ -121,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => onToggleLang && onToggleLang("en")}
+                onClick={() => handleLangChange("en")}
                 className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${currentLang === "en"
                     ? "bg-[#D4AF37] text-slate-950 shadow-sm"
                     : "text-slate-400 hover:text-white"
@@ -131,7 +119,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
 
-            {/* ប៊ូតុងកក់ការពិគ្រោះយោបល់ */}
             {onOpenConsultation && (
               <button
                 onClick={onOpenConsultation}
@@ -145,26 +132,21 @@ export const Navbar: React.FC<NavbarProps> = ({
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile menu button */}
           <div className="flex items-center gap-2 lg:hidden">
-            {/* Mobile Language Switcher */}
             <div className="flex items-center bg-[#071126] border border-slate-800 rounded-full p-0.5">
               <button
                 type="button"
-                onClick={() => onToggleLang && onToggleLang("kh")}
-                className={`px-2 py-0.5 text-[11px] font-semibold rounded-full ${currentLang === "kh"
-                    ? "bg-[#D4AF37] text-slate-950"
-                    : "text-slate-400"
+                onClick={() => handleLangChange("kh")}
+                className={`px-2 py-0.5 text-[11px] font-semibold rounded-full ${currentLang === "kh" ? "bg-[#D4AF37] text-slate-950" : "text-slate-400"
                   }`}
               >
                 ខ្មែរ
               </button>
               <button
                 type="button"
-                onClick={() => onToggleLang && onToggleLang("en")}
-                className={`px-2 py-0.5 text-[11px] font-semibold rounded-full ${currentLang === "en"
-                    ? "bg-[#D4AF37] text-slate-950"
-                    : "text-slate-400"
+                onClick={() => handleLangChange("en")}
+                className={`px-2 py-0.5 text-[11px] font-semibold rounded-full ${currentLang === "en" ? "bg-[#D4AF37] text-slate-950" : "text-slate-400"
                   }`}
               >
                 EN
@@ -182,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#071126] border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
           {navLinks.map((link) => (
