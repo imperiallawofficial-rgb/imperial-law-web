@@ -57,7 +57,13 @@ export default function Home() {
   }
 
   return (
-    <div key={currentLang} className="min-h-screen bg-[#040915] text-[#F8FAFC] flex flex-col selection:bg-[#D4AF37]/30 selection:text-[#D4AF37]">
+    <div
+      key={currentLang}
+      lang={currentLang}
+      className={`min-h-screen bg-[#040915] text-[#F8FAFC] flex flex-col selection:bg-[#D4AF37]/30 selection:text-[#D4AF37] ${
+        currentLang === "kh" ? "font-khmer" : ""
+      }`}
+    >
       {/* Navbar */}
       <Navbar
         currentLang={currentLang}

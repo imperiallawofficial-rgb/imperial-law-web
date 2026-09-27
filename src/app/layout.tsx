@@ -49,10 +49,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-[#040915] text-[#F8FAFC] antialiased">
         {children}
-        <body className="min-h-full flex flex-col bg-[#040915] text-[#F8FAFC] antialiased">
-          {children}
-          <ScrollToTop />
-        </body>
+        <ScrollToTop />
       </body>
     </html>
   );

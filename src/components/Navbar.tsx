@@ -124,7 +124,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {onOpenConsultation && (
               <button
                 onClick={onOpenConsultation}
-                className="py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-slate-950 hover:brightness-110 font-semibold text-xs flex items-center gap-2 transition-all shadow-lg hover:shadow-[#D4AF37]/20"
+                className="py-2.5 px-4 rounded-xl bg-linear-to-r from-[#D4AF37] to-[#AA7C11] text-slate-950 hover:brightness-110 font-semibold text-xs flex items-center gap-2 transition-all shadow-lg hover:shadow-[#D4AF37]/20"
               >
                 <Calendar className="w-3.5 h-3.5" />
                 <span className={currentLang === "kh" ? "font-khmer" : ""}>
@@ -191,7 +191,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 setMobileMenuOpen(false);
                 onOpenConsultation();
               }}
-              className="w-full mt-3 py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-slate-950 font-semibold text-xs flex items-center justify-center gap-2"
+              className="w-full mt-3 py-2.5 px-4 rounded-xl bg-linear-to-r from-[#D4AF37] to-[#AA7C11] text-slate-950 font-semibold text-xs flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span className={currentLang === "kh" ? "font-khmer" : ""}>

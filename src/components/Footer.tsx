@@ -28,7 +28,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenConsultation,
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-14 h-14 flex-shrink-0">
+              <div className="relative w-14 h-14 shrink-0">
                 <Image
                   src="/images/logo.png"
                   alt="Imperial Law Group Seal"
@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenConsultation,
                 currentLang === "kh" ? "font-khmer text-xs leading-normal" : "uppercase tracking-wider"
               }`}
             >
-              {currentLang === "kh" ? "រុករកទំព័រ" : "Navigation"}
+              {currentLang === "kh" ? "ទំព័រដើម" : "Navigation"}
             </h4>
             <ul className="space-y-2">
               <li>

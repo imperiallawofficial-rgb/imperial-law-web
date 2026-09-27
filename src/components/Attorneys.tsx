@@ -16,7 +16,7 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
   return (
     <section id="attorneys" className="py-24 relative overflow-hidden bg-[#071126]/80">
       {/* Background ambient accents */}
-      <div className="absolute -bottom-24 left-1/4 w-[450px] h-[450px] radial-glow-gold pointer-events-none opacity-20" />
+      <div className="absolute -bottom-24 left-1/4 w-112.5 h-112.5 radial-glow-gold pointer-events-none opacity-20" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -31,7 +31,7 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
           <h2 className={currentLang === "kh" ? "font-khmer text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4" : "text-3xl sm:text-4xl font-serif font-bold text-white mb-4"}>
             {currentLang === "kh" ? "ក្រុមមេធាវីឆ្នើមប្រកបដោយបទពិសោធន៍ និងកេរ្តិ៍ឈ្មោះ" : "Distinguished Legal Counsel"}
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+          <p className={`text-slate-300 text-sm sm:text-base leading-relaxed ${currentLang === "kh" ? "font-khmer leading-[1.8]" : ""}`}>
             {currentLang === "kh"
               ? "ក្រុមការងារដែលមានសមត្ថភាពខ្ពស់ ផ្តល់ការការពារ និងដំណោះស្រាយច្បាប់ប្រកបដោយក្រមសីលធម៌ និងប្រសិទ្ធភាព"
               : "Seasoned legal practitioners dedicated to securing justice and protecting your paramount interests."}
@@ -69,10 +69,10 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
                       </div>
                     )}
                     <div>
-                      <h3 className="font-bold text-white text-base group-hover:text-[#D4AF37] transition-colors leading-snug">
+                      <h3 className={`font-bold text-white text-base group-hover:text-[#D4AF37] transition-colors ${currentLang === "kh" ? "font-khmer text-lg leading-normal font-semibold tracking-normal" : "leading-snug"}`}>
                         {displayName}
                       </h3>
-                      <p className="text-xs text-[#D4AF37] mt-0.5 leading-snug">
+                      <p className={`text-xs text-[#D4AF37] mt-0.5 ${currentLang === "kh" ? "font-khmer leading-normal font-medium" : "leading-snug"}`}>
                         {displayRole}
                       </p>
                     </div>
@@ -80,15 +80,15 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
 
                   {/* Experience Badge */}
                   {displayExp && (
-                    <div className="mb-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#0E2243]/80 border border-slate-800 text-[11px] text-slate-300">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
-                      <span className="line-clamp-1">{displayExp}</span>
+                    <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0E2243]/90 border border-[#D4AF37]/20 text-[11px] text-slate-200">
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+                      <span className={currentLang === "kh" ? "font-khmer text-xs leading-normal" : "line-clamp-1"}>{displayExp}</span>
                     </div>
                   )}
 
                   {/* Bio */}
                   {displayBio && (
-                    <p className="text-slate-400 text-xs leading-relaxed mb-4 line-clamp-3">
+                    <p className={`text-slate-300 text-xs mb-4 line-clamp-3 ${currentLang === "kh" ? "font-khmer text-[13px] leading-[1.8] font-normal" : "leading-relaxed text-slate-400"}`}>
                       {displayBio}
                     </p>
                   )}
@@ -97,7 +97,12 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
                   {specialtiesList && (
                     <div className="flex flex-wrap gap-1.5 mb-5">
                       {specialtiesList.map((spec: string, idx: number) => (
-                        <span key={idx} className="text-[10px] px-2 py-0.5 rounded bg-slate-900/80 text-slate-400 border border-slate-800">
+                        <span
+                          key={idx}
+                          className={`px-2.5 py-1 rounded-md bg-[#0A1931] text-slate-300 border border-slate-800 ${
+                            currentLang === "kh" ? "font-khmer text-xs leading-normal font-normal" : "text-[10px]"
+                          }`}
+                        >
                           {spec}
                         </span>
                       ))}
@@ -110,10 +115,12 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
                   {/* Consultation Button */}
                   <button
                     onClick={onOpenConsultation}
-                    className="w-full py-2 px-3 rounded-lg bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-slate-950 hover:brightness-110 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-md"
+                    className="w-full py-2.5 px-4 rounded-xl bg-linear-to-r from-[#D4AF37] to-[#AA7C11] text-slate-950 hover:brightness-110 text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-md"
                   >
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span>{currentLang === "kh" ? "ណាត់ជួបមេធាវី" : "Consult"}</span>
+                    <Calendar className="w-4 h-4" />
+                    <span className={currentLang === "kh" ? "font-khmer font-semibold text-xs leading-normal" : ""}>
+                      {currentLang === "kh" ? "ណាត់ជួបមេធាវី" : "Consult"}
+                    </span>
                   </button>
 
                   {/* Direct Chat Links (Telegram / CoolApp) */}

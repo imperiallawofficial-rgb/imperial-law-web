@@ -54,9 +54,10 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
   });
 
   return (
-    <section id="practices" className="py-24 relative overflow-hidden">
+    <section id="practice-areas" className="py-24 relative overflow-hidden scroll-mt-16">
+      <span id="practices" className="absolute -top-20" aria-hidden="true" />
       {/* Background glow */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] radial-glow-gold pointer-events-none opacity-20 blur-3xl" />
+      <div className="absolute top-1/2 right-0 w-125 h-125 radial-glow-gold pointer-events-none opacity-20 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -167,7 +168,7 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
             </button>
 
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-2xl bg-[#0E2243] border border-[#D4AF37]/40 flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-[#0E2243] border border-[#D4AF37]/40 flex items-center justify-center shrink-0">
                 {iconMap[selectedModalPractice.iconName]}
               </div>
               <div>
@@ -207,7 +208,7 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
                       key={idx}
                       className="flex items-start gap-2.5 p-2.5 rounded-xl bg-[#0A1931] border border-slate-800"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                       <span
                         className={`text-xs text-slate-200 ${
                           currentLang === "kh" ? "font-khmer text-[12px] leading-[1.65]" : ""
@@ -228,7 +229,7 @@ export const PracticeAreas: React.FC<PracticeAreasProps> = ({
                   setSelectedModalPractice(null);
                   onSelectPractice(pId);
                 }}
-                className={`w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-[#071126] bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
+                className={`w-full sm:w-auto px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-[#071126] bg-linear-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
                   currentLang === "kh" ? "font-khmer leading-normal" : ""
                 }`}
               >
