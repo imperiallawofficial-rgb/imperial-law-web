@@ -44,12 +44,19 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          resetAndClose();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "unset";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     } else {
       document.body.style.overflow = "unset";
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
   }, [isOpen]);
 
   if (!isOpen) return null;
@@ -76,16 +83,35 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in overflow-y-auto">
-      <div className="bg-[#071126] border border-[#D4AF37]/40 rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
-        {/* Close Button */}
-        <button
-          onClick={resetAndClose}
-          className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-          aria-label="Close Consultation Modal"
+    <div
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/85 backdrop-blur-md animate-fade-in"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          resetAndClose();
+        }
+      }}
+    >
+      <div
+        className="min-h-full flex items-start sm:items-center justify-center p-3 sm:p-6 pt-12 pb-16 sm:py-8"
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            resetAndClose();
+          }
+        }}
+      >
+        <div
+          className="bg-[#071126] border border-[#D4AF37]/40 rounded-3xl max-w-xl w-full p-5 sm:p-8 shadow-2xl relative"
+          onClick={(e) => e.stopPropagation()}
         >
-          <X className="w-5 h-5" />
-        </button>
+          {/* Close Button */}
+          <button
+            type="button"
+            onClick={resetAndClose}
+            className="absolute top-4 right-4 sm:top-5 sm:right-5 z-20 p-2 sm:p-2.5 rounded-full bg-slate-800/90 text-slate-300 hover:text-white hover:bg-slate-700 border border-slate-700/80 shadow-md active:scale-95 transition-all cursor-pointer"
+            aria-label="Close Consultation Modal"
+          >
+            <X className="w-5 h-5" />
+          </button>
 
         {/* Modal Header */}
         <div className="flex items-center gap-3.5 mb-6 border-b border-slate-800 pb-4">
@@ -141,8 +167,9 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               </a>
             </div>
             <button
+              type="button"
               onClick={resetAndClose}
-              className={`mt-4 px-8 py-2.5 rounded-xl font-bold text-xs text-[#071126] bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] ${
+              className={`mt-4 px-8 py-2.5 rounded-xl font-bold text-xs text-[#071126] bg-linear-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] active:scale-95 transition-all cursor-pointer ${
                 currentLang === "kh" ? "font-khmer leading-normal" : ""
               }`}
             >
@@ -361,7 +388,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
               />
             </div>
 
-            <div className="pt-2 flex items-center justify-between gap-4">
+            <div className="pt-2 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-1.5 text-[10px] text-slate-400">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span className={currentLang === "kh" ? "font-khmer leading-normal text-[11px]" : ""}>
@@ -369,18 +396,30 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 </span>
               </div>
 
-              <button
-                type="submit"
-                className={`px-6 py-2.5 rounded-xl font-bold text-xs text-[#071126] bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all flex items-center gap-2 cursor-pointer ${
-                  currentLang === "kh" ? "font-khmer leading-normal" : ""
-                }`}
-              >
-                <Send className="w-3.5 h-3.5 text-[#071126]" />
-                <span>{consultationModal.submitBtn[currentLang]}</span>
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={resetAndClose}
+                  className={`px-4 py-2.5 rounded-xl font-medium text-xs text-slate-300 hover:text-white bg-slate-800/90 hover:bg-slate-700 border border-slate-700/80 shadow-xs active:scale-95 transition-all cursor-pointer ${
+                    currentLang === "kh" ? "font-khmer leading-normal" : ""
+                  }`}
+                >
+                  {consultationModal.closeBtn[currentLang]}
+                </button>
+                <button
+                  type="submit"
+                  className={`px-5 sm:px-6 py-2.5 rounded-xl font-bold text-xs text-[#071126] bg-linear-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-md hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] active:scale-95 transition-all flex items-center gap-2 cursor-pointer ${
+                    currentLang === "kh" ? "font-khmer leading-normal" : ""
+                  }`}
+                >
+                  <Send className="w-3.5 h-3.5 text-[#071126]" />
+                  <span>{consultationModal.submitBtn[currentLang]}</span>
+                </button>
+              </div>
             </div>
           </form>
         )}
+        </div>
       </div>
     </div>
   );
