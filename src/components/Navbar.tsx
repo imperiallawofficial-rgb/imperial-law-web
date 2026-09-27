@@ -69,8 +69,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Logo & Brand */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="flex flex-col">
-              <span className="font-khmer font-bold text-sm tracking-wide text-[#D4AF37] leading-tight">
-                ក្រុមមេធាវីអុីមភើរៀល
+              <span className="font-khmer font-bold text-sm text-[#D4AF37] leading-normal tracking-normal">
+                ក្រុមមេធាវីអឹមភើរៀល
               </span>
               <span className="font-serif font-bold text-xs tracking-wider text-white uppercase leading-tight">
                 IMPERIAL LAW GROUP

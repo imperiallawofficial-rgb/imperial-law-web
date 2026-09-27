@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenConsultation,
                 />
               </div>
               <div>
-                <span className="font-khmer text-sm font-bold text-[#E6CE78] block leading-snug">
+                <span className="font-khmer text-sm font-bold text-[#E6CE78] block leading-normal">
                   {brand.nameKh}
                 </span>
                 <span className="font-serif-luxury text-base font-bold text-white tracking-wider uppercase block">
