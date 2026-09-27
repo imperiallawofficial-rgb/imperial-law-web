@@ -1,13 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
   async redirects() {
     return [
       {
         source: "/admin",
         destination: "/",
-        permanent: false, // ឬ true បើចង់បង្វែរជាអចិន្ត្រៃយ៍
+        permanent: false,
       },
     ];
   },
