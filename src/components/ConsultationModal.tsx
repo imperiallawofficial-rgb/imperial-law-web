@@ -115,7 +115,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
 
         {/* Modal Header */}
         <div className="flex items-center gap-3.5 mb-6 border-b border-slate-800 pb-4">
-          <div className="relative w-12 h-12 flex-shrink-0">
+          <div className="relative w-12 h-12 shrink-0">
             <Image
               src="/images/logo.png"
               alt="Imperial Law Group Logo"
