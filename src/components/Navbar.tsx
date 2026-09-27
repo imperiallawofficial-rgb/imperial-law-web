@@ -66,6 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
+          {/* Logo & Brand */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="flex flex-col">
               <span className="font-khmer font-bold text-sm tracking-wide text-[#D4AF37] leading-tight">
@@ -80,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </a>
 
-          {/* Nav links */}
+          {/* Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
@@ -94,15 +95,16 @@ export const Navbar: React.FC<NavbarProps> = ({
             ))}
           </nav>
 
-          {/* Action & Switcher */}
+          {/* Action Buttons & Language Switcher */}
           <div className="hidden sm:flex items-center gap-4">
+            {/* Custom Rounded Toggle with Proper Khmer Font */}
             <div className="flex items-center bg-[#071126] border border-slate-800 rounded-full p-0.5">
               <button
                 type="button"
                 onClick={() => handleLangChange("kh")}
-                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${currentLang === "kh"
-                    ? "bg-[#D4AF37] text-slate-950 shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                className={`px-3 py-1 text-xs rounded-full transition-all flex items-center justify-center font-khmer ${currentLang === "kh"
+                    ? "bg-[#D4AF37] text-slate-950 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-white font-medium"
                   }`}
               >
                 ខ្មែរ
@@ -110,9 +112,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={() => handleLangChange("en")}
-                className={`px-3 py-1 text-xs font-semibold rounded-full transition-all ${currentLang === "en"
-                    ? "bg-[#D4AF37] text-slate-950 shadow-sm"
-                    : "text-slate-400 hover:text-white"
+                className={`px-3 py-1 text-xs rounded-full transition-all flex items-center justify-center font-sans tracking-wide ${currentLang === "en"
+                    ? "bg-[#D4AF37] text-slate-950 font-bold shadow-sm"
+                    : "text-slate-400 hover:text-white font-semibold"
                   }`}
               >
                 EN
@@ -138,7 +140,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={() => handleLangChange("kh")}
-                className={`px-2 py-0.5 text-[11px] font-semibold rounded-full ${currentLang === "kh" ? "bg-[#D4AF37] text-slate-950" : "text-slate-400"
+                className={`px-2.5 py-0.5 text-[11px] rounded-full transition-all font-khmer ${currentLang === "kh"
+                    ? "bg-[#D4AF37] text-slate-950 font-bold"
+                    : "text-slate-400 font-medium"
                   }`}
               >
                 ខ្មែរ
@@ -146,7 +150,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 type="button"
                 onClick={() => handleLangChange("en")}
-                className={`px-2 py-0.5 text-[11px] font-semibold rounded-full ${currentLang === "en" ? "bg-[#D4AF37] text-slate-950" : "text-slate-400"
+                className={`px-2.5 py-0.5 text-[11px] rounded-full transition-all font-sans ${currentLang === "en"
+                    ? "bg-[#D4AF37] text-slate-950 font-bold"
+                    : "text-slate-400 font-semibold"
                   }`}
               >
                 EN
@@ -164,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Mobile dropdown */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#071126] border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
           {navLinks.map((link) => (
