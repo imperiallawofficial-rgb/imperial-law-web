@@ -19,12 +19,12 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenConsultation, con
   return (
     <section className="relative min-h-[92vh] pt-32 pb-20 flex flex-col justify-between overflow-hidden">
       {/* Background Decorative Ambient Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] radial-glow-gold pointer-events-none opacity-40 blur-3xl" />
-      <div className="absolute -top-20 -left-20 w-[500px] h-[500px] radial-glow-navy pointer-events-none opacity-50 blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] radial-glow-navy pointer-events-none opacity-40 blur-3xl" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 radial-glow-gold pointer-events-none opacity-40 blur-3xl" />
+      <div className="absolute -top-20 -left-20 w-125 h-125 radial-glow-navy pointer-events-none opacity-50 blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-150 h-150 radial-glow-navy pointer-events-none opacity-40 blur-3xl" />
 
       {/* Subtle Classical Architectural Grid Lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(212,175,55,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(212,175,55,0.03)_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -81,7 +81,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenConsultation, con
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <button
                 onClick={onOpenConsultation}
-                className={`w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-sm text-[#071126] bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer ${
+                className={`w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-sm text-[#071126] bg-linear-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(212,175,55,0.6)] hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer ${
                   currentLang === "kh" ? "font-khmer leading-normal" : "tracking-wide"
                 }`}
               >
@@ -128,7 +128,7 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenConsultation, con
               {/* Outer Golden Glow & Concentric Circles */}
               <div className="absolute inset-0 rounded-full border border-[#D4AF37]/25 animate-[spin_40s_linear_infinite]" />
               <div className="absolute -inset-4 rounded-full border border-dashed border-[#D4AF37]/15 animate-[spin_60s_linear_infinite_reverse]" />
-              <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-[#0E2243] to-[#071126] shadow-2xl" />
+              <div className="absolute inset-2 rounded-full bg-linear-to-tr from-[#0E2243] to-[#071126] shadow-2xl" />
 
               {/* Logo Emblem Image */}
               <div className="relative w-full h-full p-4 flex items-center justify-center select-none pointer-events-none">

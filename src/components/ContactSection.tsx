@@ -40,7 +40,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       {/* Background Glow */}
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] radial-glow-gold pointer-events-none opacity-20 blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-150 h-150 radial-glow-gold pointer-events-none opacity-20 blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -79,7 +79,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
             {/* Address Card */}
             <div className="glass-card p-6 sm:p-7 rounded-3xl border border-[#D4AF37]/25 space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] flex-shrink-0 mt-1">
+                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -102,7 +102,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
 
               {/* Phone & Emergency */}
               <div className="flex items-start gap-4 pt-4 border-t border-slate-800">
-                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] flex-shrink-0 mt-1">
+                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -132,7 +132,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
 
               {/* Email & Telegram */}
               <div className="flex items-start gap-4 pt-4 border-t border-slate-800">
-                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] flex-shrink-0 mt-1">
+                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1">
                   <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
@@ -164,7 +164,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
 
               {/* Working Hours */}
               <div className="flex items-start gap-4 pt-4 border-t border-slate-800">
-                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] flex-shrink-0 mt-1">
+                <div className="w-11 h-11 rounded-xl bg-[#0E2243] border border-[#D4AF37]/30 flex items-center justify-center text-[#D4AF37] shrink-0 mt-1">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -188,7 +188,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
 
             {/* Confidentiality Guarantee Notice */}
             <div className="p-4 rounded-2xl bg-[#0A1931]/60 border border-[#D4AF37]/20 flex items-center gap-3 text-xs text-slate-300">
-              <ShieldCheck className="w-5 h-5 text-[#D4AF37] flex-shrink-0" />
+              <ShieldCheck className="w-5 h-5 text-[#D4AF37] shrink-0" />
               <span className={currentLang === "kh" ? "font-khmer text-[12px] leading-[1.65]" : ""}>
                 {currentLang === "kh"
                   ? "រាល់ទិន្នន័យ និងព័ត៌មានដែលផ្ញើមកកាន់យើងខ្ញុំ ត្រូវបានការពារក្រោមសិទ្ធិសម្ងាត់រវាងមេធាវី និងកូនក្តី។"
@@ -376,7 +376,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
 
                   <button
                     type="submit"
-                    className={`w-full py-3.5 px-6 rounded-xl font-bold text-xs sm:text-sm text-[#071126] bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
+                    className={`w-full py-3.5 px-6 rounded-xl font-bold text-xs sm:text-sm text-[#071126] bg-linear-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer ${
                       currentLang === "kh" ? "font-khmer leading-normal" : ""
                     }`}
                   >

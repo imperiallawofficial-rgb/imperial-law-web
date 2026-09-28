@@ -61,7 +61,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ currentLang, onOpenConsultatio
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#D4AF37]/10 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-12 h-12 flex-shrink-0 pointer-events-none select-none">
+                <div className="relative w-12 h-12 shrink-0 pointer-events-none select-none">
                   <Image
                     src="/images/logo.png"
                     alt="Emblem"
@@ -155,7 +155,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ currentLang, onOpenConsultatio
         {/* CTA Bar */}
         <div className="glass-card p-6 sm:p-8 rounded-2xl border border-[#D4AF37]/30 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center text-[#071126] flex-shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-gradient-gold flex items-center justify-center text-[#071126] shrink-0">
               <CheckCircle className="w-6 h-6" />
             </div>
             <div>
@@ -181,7 +181,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ currentLang, onOpenConsultatio
           </div>
           <button
             onClick={onOpenConsultation}
-            className={`px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-[#071126] bg-gradient-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 whitespace-nowrap cursor-pointer ${
+            className={`px-6 py-3 rounded-xl font-bold text-xs sm:text-sm text-[#071126] bg-linear-to-r from-[#F3E5AB] via-[#D4AF37] to-[#C5A059] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 whitespace-nowrap cursor-pointer ${
               currentLang === "kh" ? "font-khmer leading-normal" : ""
             }`}
           >
