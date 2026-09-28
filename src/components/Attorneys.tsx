@@ -60,7 +60,8 @@ export const Attorneys: React.FC<AttorneysProps> = ({ currentLang, onOpenConsult
                         <img
                           src={attorney.image}
                           alt={displayName}
-                          className="w-full h-full object-cover object-top"
+                          className="w-full h-full object-cover object-top pointer-events-none select-none"
+                          draggable={false}
                         />
                       </div>
                     ) : (

@@ -1,4 +1,5 @@
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { SecurityGuard } from "@/components/SecurityGuard";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#040915] text-[#F8FAFC] antialiased">
+        <SecurityGuard />
         {children}
         <ScrollToTop />
       </body>

@@ -28,12 +28,13 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onOpenConsultation,
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-14 h-14 shrink-0">
+              <div className="relative w-14 h-14 shrink-0 pointer-events-none select-none">
                 <Image
                   src="/images/logo.png"
                   alt="Imperial Law Group Seal"
                   fill
-                  className="object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)]"
+                  className="object-contain drop-shadow-[0_0_10px_rgba(212,175,55,0.3)] pointer-events-none select-none"
+                  draggable={false}
                 />
               </div>
               <div>

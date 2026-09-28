@@ -61,12 +61,13 @@ export const AboutUs: React.FC<AboutUsProps> = ({ currentLang, onOpenConsultatio
               <div className="absolute top-0 right-0 w-48 h-48 bg-[#D4AF37]/10 rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-3 mb-6">
-                <div className="relative w-12 h-12 flex-shrink-0">
+                <div className="relative w-12 h-12 flex-shrink-0 pointer-events-none select-none">
                   <Image
                     src="/images/logo.png"
                     alt="Emblem"
                     fill
-                    className="object-contain"
+                    className="object-contain pointer-events-none select-none"
+                    draggable={false}
                   />
                 </div>
                 <div>

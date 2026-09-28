@@ -33,7 +33,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ currentLang, con
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone) return;
+    if (!formData.name.trim() || !formData.phone.trim()) return;
     setSubmitted(true);
   };
 

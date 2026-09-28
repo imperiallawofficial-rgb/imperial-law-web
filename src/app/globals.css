@@ -190,3 +190,47 @@ label.font-khmer,
 ::-webkit-scrollbar-thumb:hover {
   background: #D4AF37;
 }
+
+/* ==========================================================================
+   Data Protection & Anti-Scraping Safeguards
+   ========================================================================== */
+
+/* Disable text selection and dragging across the website */
+html,
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Ensure users can select, type, and paste inside form inputs */
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Prevent image dragging to prevent saving images directly */
+img,
+picture,
+svg {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* Prevent saving or extracting data via Print / Print-to-PDF */
+@media print {
+  body {
+    display: none !important;
+  }
+}
+

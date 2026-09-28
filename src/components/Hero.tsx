@@ -131,12 +131,13 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenConsultation, con
               <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-[#0E2243] to-[#071126] shadow-2xl" />
 
               {/* Logo Emblem Image */}
-              <div className="relative w-full h-full p-4 flex items-center justify-center">
+              <div className="relative w-full h-full p-4 flex items-center justify-center select-none pointer-events-none">
                 <Image
                   src="/images/logo.png"
                   alt="Imperial Law Group Seal"
                   fill
-                  className="object-contain drop-shadow-[0_0_25px_rgba(212,175,55,0.45)] hover:scale-105 transition-transform duration-500"
+                  className="object-contain drop-shadow-[0_0_25px_rgba(212,175,55,0.45)] hover:scale-105 transition-transform duration-500 select-none pointer-events-auto"
+                  draggable={false}
                   priority
                 />
               </div>
